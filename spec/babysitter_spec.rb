@@ -26,5 +26,17 @@ describe Babysitter do
 		it 'returns a total of 96 dollars for a shift from 6:00PM to 2:00AM, with a bedtime of 10:00PM' do
 			expect(@babysitter.calc(18,22,2)).to eq(96)
 		end
+
+		it 'only accepts integer values for start time' do
+			expect(@babysitter.calc(18.5,22,2)).to eq('can only use whole hour values')
+		end
+
+		it 'only accepts integer values for bed time' do
+			expect(@babysitter.calc(18,22.5,2)).to eq('can only use whole hour values')
+		end
+
+		it 'only accepts integer values for end time' do
+			expect(@babysitter.calc(18,22,2.5)).to eq('can only use whole hour values')		
+		end
 	end
 end
