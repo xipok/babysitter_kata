@@ -22,5 +22,9 @@ describe Babysitter do
 		it 'returns a total of 64 dollars for a shift from 6:00PM to 12:00AM, with a bedtime of 10:00PM' do
 			expect(@babysitter.calc(18,22,0)).to eq(64)
 		end
+
+		it 'returns a total of 96 dollars for a shift from 6:00PM to 2:00AM, with a bedtime of 10:00PM' do
+			expect(@babysitter.calc(18,22,2)).to eq(96)
+		end
 	end
 end
